@@ -7,25 +7,29 @@ public class distribuidora
     String distribuidoranombre;
     String distribuidoradomicilio;
 
-    public distribuidora()
+
+
+
+
+
+    public distribuidora(Long iddistribuidora, String distribuidoracuit, String distribuidoranombre, String distribuidoradomicilio)
     {
-
-        this.iddistribuidora = Long.valueOf(0);
-        this.distribuidoracuit = "";
-        this.distribuidoranombre = "";
-        this.distribuidoradomicilio = "";
-    }
-
-    public distribuidora(Long iddistribuidora, String distribuidoracuit, String distribuidoranombre, String distribuidoradomicilio) {
         this.iddistribuidora = iddistribuidora;
         this.distribuidoracuit = distribuidoracuit;
         this.distribuidoranombre = distribuidoranombre;
         this.distribuidoradomicilio = distribuidoradomicilio;
     }
 
-    
+    public distribuidora()
+    {
+        this.iddistribuidora = Long.valueOf(0);
+        this.distribuidoracuit = "";
+        this.distribuidoranombre = "";
+        this.distribuidoradomicilio = "";
+    }
 
-    public Long getIddistribuidora() {
+    public Long getIddistribuidora()
+    {
         return iddistribuidora;
     }
 
