@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.tpfinal_grupal_mobil.entidades.distribuidora.PantallaPrincipalDistribuidora;
+
 public class principal extends AppCompatActivity implements View.OnClickListener{
 
     Button BotonIrADistribuidora;
@@ -24,7 +26,7 @@ public class principal extends AppCompatActivity implements View.OnClickListener
     {
         if (v.getId()==BotonIrADistribuidora.getId())
         {
-            Intent iradistribuidora = new Intent(this, distribuidoraprueba.class);
+            Intent iradistribuidora = new Intent(this, PantallaPrincipalDistribuidora.class);
             startActivity(iradistribuidora);
         }
     }
