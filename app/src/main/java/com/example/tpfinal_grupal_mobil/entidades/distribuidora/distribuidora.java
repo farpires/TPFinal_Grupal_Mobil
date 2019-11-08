@@ -23,7 +23,7 @@ public class distribuidora
         this.distribuidoradomicilio = distribuidoradomicilio;
     }
 
-    
+
 
     public Long getIddistribuidora() {
         return iddistribuidora;
@@ -66,4 +66,5 @@ public class distribuidora
                 ", distribuidoradomicilio='" + distribuidoradomicilio + '\'' +
                 '}';
     }
+
 }
