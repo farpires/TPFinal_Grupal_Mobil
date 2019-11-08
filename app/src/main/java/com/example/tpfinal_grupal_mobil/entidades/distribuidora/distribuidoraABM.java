@@ -15,6 +15,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.tpfinal_grupal_mobil.R;
+import com.example.tpfinal_grupal_mobil.entidades.entornodedatos;
 import com.google.gson.Gson;
 
 public class distribuidoraABM extends AppCompatActivity implements View.OnClickListener
@@ -54,7 +55,7 @@ public class distribuidoraABM extends AppCompatActivity implements View.OnClickL
 
         if (PK>0)
         {
-            DistribuidoraMuestra = entornodedatosdistribuidora.ListaDistribuidora.get(Posicion);
+            DistribuidoraMuestra = entornodedatos.ListaDistribuidora.get(Posicion);
             DistribuidoraABMPK.setText(String.valueOf(PK));
             Distribuidoracuit.setText(DistribuidoraMuestra.getDistribuidoracuit());
             DistribuidoraNombre.setText(DistribuidoraMuestra.getDistribuidoranombre());
@@ -82,11 +83,11 @@ public class distribuidoraABM extends AppCompatActivity implements View.OnClickL
 
             RequestQueue queue = Volley.newRequestQueue(this);
 
-            String RutaAlServicioWEB = entornodedatosdistribuidora.LinkServidorWeb + "/distribuidoraWS";
+            String RutaAlServicioWEB = entornodedatos.LinkServidorWeb + "/distribuidoraWS";
 
-            RutaAlServicioWEB = entornodedatosdistribuidora.AgregarParametroALink(RutaAlServicioWEB,"?TipoProceso","3");
+            RutaAlServicioWEB = entornodedatos.AgregarParametroALink(RutaAlServicioWEB,"?TipoProceso","3");
 
-            RutaAlServicioWEB = entornodedatosdistribuidora.AgregarParametroALink(RutaAlServicioWEB,"&ParametroJSON",SalidaDeObjetoEnFormatoJson);
+            RutaAlServicioWEB = entornodedatos.AgregarParametroALink(RutaAlServicioWEB,"&ParametroJSON",SalidaDeObjetoEnFormatoJson);
 
 
             // La Dirección a donde vamos a realizar el Request
@@ -128,11 +129,11 @@ public class distribuidoraABM extends AppCompatActivity implements View.OnClickL
 
             RequestQueue queue = Volley.newRequestQueue(this);
 
-            String RutaAlServicioWEB = entornodedatosdistribuidora.LinkServidorWeb + "/distribuidoraWS";
+            String RutaAlServicioWEB = entornodedatos.LinkServidorWeb + "/distribuidoraWS";
 
-            RutaAlServicioWEB = entornodedatosdistribuidora.AgregarParametroALink(RutaAlServicioWEB,"?TipoProceso","2");
+            RutaAlServicioWEB = entornodedatos.AgregarParametroALink(RutaAlServicioWEB,"?TipoProceso","2");
 
-            RutaAlServicioWEB = entornodedatosdistribuidora.AgregarParametroALink(RutaAlServicioWEB,"&ParametroJSON",SalidaDeObjetoEnFormatoJson);
+            RutaAlServicioWEB = entornodedatos.AgregarParametroALink(RutaAlServicioWEB,"&ParametroJSON",SalidaDeObjetoEnFormatoJson);
 
 
             // La Dirección a donde vamos a realizar el Request
