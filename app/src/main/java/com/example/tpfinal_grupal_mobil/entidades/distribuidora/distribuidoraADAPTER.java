@@ -8,6 +8,7 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.example.tpfinal_grupal_mobil.R;
+import com.example.tpfinal_grupal_mobil.entidades.entornodedatos;
 
 public class distribuidoraADAPTER extends BaseAdapter
 {
@@ -20,17 +21,17 @@ public class distribuidoraADAPTER extends BaseAdapter
 
     @Override
     public int getCount() {
-        return(entornodedatosdistribuidora.ListaDistribuidora.size());
+        return(entornodedatos.ListaDistribuidora.size());
     }
 
     @Override
     public Object getItem(int i) {
-        return(entornodedatosdistribuidora.ListaDistribuidora.get(i));
+        return(entornodedatos.ListaDistribuidora.get(i));
     }
 
     @Override
     public long getItemId(int i) {
-        return (entornodedatosdistribuidora.ListaDistribuidora.get(i).getIddistribuidora());
+        return (entornodedatos.ListaDistribuidora.get(i).getIddistribuidora());
     }
 
     @Override
@@ -43,7 +44,7 @@ public class distribuidoraADAPTER extends BaseAdapter
 
         TextView CategoriaItem_TextView = Vista.findViewById(R.id.DistribuidoraItem_TextView);
 
-        CategoriaItem_TextView.setText(entornodedatosdistribuidora.ListaDistribuidora.get(i).toString());
+        CategoriaItem_TextView.setText(entornodedatos.ListaDistribuidora.get(i).toString());
 
         return Vista;
     }
