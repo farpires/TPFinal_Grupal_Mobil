@@ -12,6 +12,8 @@
         android:theme="@style/AppTheme">
         <activity android:name=".entidades.distribuidora.PantallaPrincipalDistribuidora"></activity>
         <activity android:name=".entidades.distribuidora.distribuidoraABM"></activity>
+        <activity android:name=".entidades.categoria.PantallaPrincipalCategoria"></activity>
+        <activity android:name=".entidades.categoria.CategoriaABM"></activity>
         <activity android:name=".principal">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

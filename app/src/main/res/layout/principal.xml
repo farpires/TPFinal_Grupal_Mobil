@@ -10,5 +10,12 @@
        android:id="@+id/BotonIraDistribuidora"
        ></Button>
 
+   <Button
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:text="Categoria"
+       android:id="@+id/BotonIraCategoria"
+       ></Button>
+
 
 </LinearLayout>

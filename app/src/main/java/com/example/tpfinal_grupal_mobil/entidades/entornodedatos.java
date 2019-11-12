@@ -1,5 +1,6 @@
 package com.example.tpfinal_grupal_mobil.entidades;
 
+import com.example.tpfinal_grupal_mobil.entidades.categoria.Categoria;
 import com.example.tpfinal_grupal_mobil.entidades.distribuidora.distribuidora;
 
 import java.util.ArrayList;
@@ -12,6 +13,7 @@ public class entornodedatos
     public static boolean DatosInicializados = false;
 
     public static List<distribuidora> ListaDistribuidora = new ArrayList<distribuidora>();
+    public static List<Categoria> ListaCategoria = new ArrayList<Categoria>();
 
 
     public static String AgregarParametroALink(String LinkServidorWebParametro, String NombreParametro, String ValorParametro)
