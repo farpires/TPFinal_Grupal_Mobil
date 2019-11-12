@@ -9,6 +9,7 @@ import android.widget.Button;
 
 import com.example.tpfinal_grupal_mobil.entidades.categoria.PantallaPrincipalCategoria;
 import com.example.tpfinal_grupal_mobil.entidades.distribuidora.PantallaPrincipalDistribuidora;
+import com.example.tpfinal_grupal_mobil.entidades.entornodedatos;
 
 public class principal extends AppCompatActivity implements View.OnClickListener{
 
@@ -26,6 +27,8 @@ public class principal extends AppCompatActivity implements View.OnClickListener
 
         BotonIrACategoria = findViewById(R.id.BotonIraCategoria);
         BotonIrACategoria.setOnClickListener(this);
+
+        entornodedatos.BuscarDistribuidora(getApplicationContext()," ");
     }
 
     @Override
