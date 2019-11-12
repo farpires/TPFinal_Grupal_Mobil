@@ -59,12 +59,11 @@ public class distribuidora
 
     @Override
     public String toString() {
-        return "distribuidora{" +
-                "iddistribuidora=" + iddistribuidora +
-                ", distribuidoracuit='" + distribuidoracuit + '\'' +
-                ", distribuidoranombre='" + distribuidoranombre + '\'' +
-                ", distribuidoradomicilio='" + distribuidoradomicilio + '\'' +
-                '}';
+        return "Distribuidora" + "\t"+
+                " ID :" + iddistribuidora + "\t"+
+                " Distribuidora Cuit :" + distribuidoracuit + "\t" +
+                " Distribuidora Nombre : " + distribuidoranombre + "\t" +
+                " Distribuidora Domicilio : " + distribuidoradomicilio ;
     }
 
 }

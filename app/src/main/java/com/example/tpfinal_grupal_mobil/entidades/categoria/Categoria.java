@@ -54,7 +54,7 @@ public class Categoria
         @Override
         public String toString()
         {
-            return  + CategoriaPK + " - " + CategoriaNombre+ " - " +IDDistribuidora;
+            return   "Categoria ID : "+CategoriaPK + " - " + " Categoria Nombre : " + CategoriaNombre+ " - " +" Distribuidora ID : "+IDDistribuidora;
         }
 }
 
