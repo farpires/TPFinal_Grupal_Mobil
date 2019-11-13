@@ -78,7 +78,7 @@ public class PantallaPrincipalCategoria extends AppCompatActivity implements Vie
             String Info = categorianombre.getText().toString();
             RequestQueue queue = Volley.newRequestQueue(this);
 
-            String RutaAlServicioWEB =  "http://192.168.1.150:8080/ProyectoFinal_Grupal/categoriaWS?TipoProceso=4" + "&CategoriaNombreABuscar=" + Info;
+            String RutaAlServicioWEB =  "http://192.168.1.160:8080/ProyectoFinal_Grupal/categoriaWS?TipoProceso=4" + "&CategoriaNombreABuscar=" + Info;
             // La Dirección a donde vamos a realizar el Request
             StringRequest stringRequest = new StringRequest(Request.Method.GET, RutaAlServicioWEB,
                     new Response.Listener<String>()
@@ -111,13 +111,12 @@ public class PantallaPrincipalCategoria extends AppCompatActivity implements Vie
         if (BtnAgregar.getId()==v.getId())
         {
 
-            Intent IntentoAgregar = new Intent(this, CategoriaABM.class);
+            Intent IntentoAgregar = new Intent(PantallaPrincipalCategoria.this, CategoriaABM.class);
 
-            IntentoAgregar.putExtra("PK",Long.valueOf(0));
+            IntentoAgregar.putExtra("PK", Long.valueOf(0));
             IntentoAgregar.putExtra("POSICION",0);
 
             startActivityForResult(IntentoAgregar,1);
-
         }
     }
 

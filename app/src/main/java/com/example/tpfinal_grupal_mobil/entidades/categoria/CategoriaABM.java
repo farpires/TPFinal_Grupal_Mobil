@@ -34,8 +34,8 @@ public class CategoriaABM extends AppCompatActivity implements View.OnClickListe
     Spinner DistribuidoraSpinner;
     distribuidoraADAPTER MyDistribuidoraAdapter;
 
-    Long          PK =Long.valueOf(0);
-    int           POSICION = 0;
+    Long PK = Long.valueOf(0);
+    int POSICION = 0;
 
     Categoria CategoriaMuestra;
 
@@ -57,7 +57,7 @@ public class CategoriaABM extends AppCompatActivity implements View.OnClickListe
         DistribuidoraSpinner.setAdapter(MyDistribuidoraAdapter);
 
         PK = getIntent().getLongExtra("PK", Long.valueOf(0));
-        POSICION = getIntent().getIntExtra("POSICION", 0);
+        POSICION = getIntent().getIntExtra("POSICION",0);
 
 
         if (PK > 0) // POR AQUI SE INGRESA MODIFICANDO O ELIMINANDO UN PRODUCTO YA EXISTENTE //
@@ -69,6 +69,7 @@ public class CategoriaABM extends AppCompatActivity implements View.OnClickListe
             NombreCategoria.setText(CategoriaMuestra.getCategoriaNombre());
 
 
+
             int PosicionDeLaCategoriaAMostrarDentroDelSpinner = 0;
 
             for (int i = 0; i < entornodedatos.ListaDistribuidora.size(); i++) {
@@ -77,15 +78,17 @@ public class CategoriaABM extends AppCompatActivity implements View.OnClickListe
                 }
             }
 
-            DistribuidoraSpinner.setSelection(PosicionDeLaCategoriaAMostrarDentroDelSpinner, true);
+            DistribuidoraSpinner.setSelection(PosicionDeLaCategoriaAMostrarDentroDelSpinner,true);
 
-            categoriaBotonEditar.setEnabled(true);
+            //BTNUsuarioAgregar.setEnabled(false);
+
+            //categoriaBotonEditar.setEnabled(true);
         } else // POR AQUI SE INGRESA CUANDO ES UN PRODUCTO NUEVO //
         {
             CategoriaMuestra = new Categoria();
 
-            categoriaBotonEditar.setEnabled(true);
-            categoriaABMBotonEliminar.setEnabled(true);
+            categoriaBotonEditar.setEnabled(false);
+            categoriaABMBotonEliminar.setEnabled(false);
         }
     }
 
@@ -96,18 +99,15 @@ public class CategoriaABM extends AppCompatActivity implements View.OnClickListe
         {
 
 
-            String idcategoria = CategoriaABMPK.getText().toString();
+
             String categorianombre = NombreCategoria.getText().toString();
 
             Long iddistribuidora1 = DistribuidoraSpinner.getSelectedItemId();
-
-
-
-            Categoria DistribuidoraModificar= new Categoria(Long.valueOf(idcategoria),categorianombre,iddistribuidora1);
+            CategoriaMuestra = new Categoria(PK,categorianombre,iddistribuidora1);
 
             Gson Conversor = new Gson();
 
-            String SalidaDeObjetoEnFormatoJson = Conversor.toJson(DistribuidoraModificar);
+            String SalidaDeObjetoEnFormatoJson = Conversor.toJson(CategoriaMuestra);
 
             RequestQueue queue = Volley.newRequestQueue(this);
 
@@ -142,17 +142,16 @@ public class CategoriaABM extends AppCompatActivity implements View.OnClickListe
         }
         if (v.getId()==categoriaBotonEditar.getId())
         {
+
+
             String categorianombre = NombreCategoria.getText().toString();
+
             Long iddistribuidora1 = DistribuidoraSpinner.getSelectedItemId();
-
-
-            Categoria DistribuidoraModificar= new Categoria(PK,categorianombre,iddistribuidora1);
-
-
+            CategoriaMuestra = new Categoria(PK,categorianombre,iddistribuidora1);
 
             Gson Conversor = new Gson();
 
-            String SalidaDeObjetoEnFormatoJson = Conversor.toJson(DistribuidoraModificar);
+            String SalidaDeObjetoEnFormatoJson = Conversor.toJson(CategoriaMuestra);
 
             Toast.makeText(getApplicationContext(),SalidaDeObjetoEnFormatoJson,Toast.LENGTH_LONG).show();
 
