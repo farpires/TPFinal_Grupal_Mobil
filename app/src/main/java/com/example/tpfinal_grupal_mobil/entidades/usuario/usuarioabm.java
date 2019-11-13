@@ -28,7 +28,6 @@ public class usuarioabm extends AppCompatActivity implements View.OnClickListene
 
     Spinner iddistribuidora;
     distribuidoraADAPTER MyDsitribuidoraAdapter;
-   //MyUsuarioAdapter.notifyDataSetChanged();
 
     Button BTNUsuarioAgregar;
     Button BTNGuardarCambios;

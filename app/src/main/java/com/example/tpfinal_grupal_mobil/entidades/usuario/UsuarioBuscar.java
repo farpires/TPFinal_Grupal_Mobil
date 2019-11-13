@@ -27,7 +27,7 @@ import java.lang.reflect.Type;
 import java.util.List;
 
 
-public class UsuarioBuscar extends AppCompatActivity implements /*View.OnClickListener, */AdapterView.OnItemClickListener
+public class UsuarioBuscar extends AppCompatActivity implements AdapterView.OnItemClickListener
 {
 
     EditText Usuario_ABM_EdtBusqueda;
@@ -50,9 +50,6 @@ public class UsuarioBuscar extends AppCompatActivity implements /*View.OnClickLi
         MyUsuarioAdapter = new usuarioadapter(getApplicationContext());
         Usuario_ABM_Lista.setAdapter(MyUsuarioAdapter);
 
-        //SE AÑADE TODOS LOS USUARIO AL LISTADO
-       // entornodedatos.BuscarUsuario(UsuarioBuscar.this,Usuario_ABM_EdtBusqueda.getText().toString());
-
         Usuario_ABM_Lista.setOnItemClickListener(this);
 
         Usuario_ABM_BtnBusqueda.setOnClickListener(new View.OnClickListener() {
@@ -60,9 +57,8 @@ public class UsuarioBuscar extends AppCompatActivity implements /*View.OnClickLi
             public void onClick(View view) {
 
                 //LISTAR SOLO EL USUARIO QUE NECESITE
-             //   entornodedatos.BuscarUsuario(UsuarioBuscar.this,Usuario_ABM_EdtBusqueda.getText().toString());
-            //    MyUsuarioAdapter.notifyDataSetChanged();
-                BuscarProducto(Usuario_ABM_EdtBusqueda.getText().toString());
+
+              BuscarProducto(Usuario_ABM_EdtBusqueda.getText().toString());
             }
         });
         Usuario_ABM_BtnAgregarNuevoUsuario.setOnClickListener(new View.OnClickListener() {
@@ -81,27 +77,6 @@ public class UsuarioBuscar extends AppCompatActivity implements /*View.OnClickLi
 
 
     }
-/*
-    @Override
-    public void onClick(View v) {
-        if (v.getId()==Usuario_ABM_BtnBusqueda.getId())
-        {
-            MyUsuarioAdapter.notifyDataSetChanged();
-            //LISTAR SOLO EL USUARIO QUE NECESITE
-            EntornoDeDatos.BuscarUsuario(UsuarioBuscar.this,Usuario_ABM_EdtBusqueda.getText().toString());
-        }
-        if (v.getId()==Usuario_ABM_BtnAgregarNuevoUsuario.getId()){
-            Intent IntentoAgregar = new Intent(this, usuarioabm.class);
-
-            IntentoAgregar.putExtra("PK",Long.valueOf(0));
-            IntentoAgregar.putExtra("POSICION",0);
-
-            startActivityForResult(IntentoAgregar,1);
-
-
-        }
-
-    }*/
 
    private void BuscarProducto(String ValorBuscado)
     {
@@ -121,13 +96,6 @@ public class UsuarioBuscar extends AppCompatActivity implements /*View.OnClickLi
                     @Override
                     public void onResponse(String response)
                     {
-
-                        //Gson Conversor = new Gson();
-
-                        //Type listType = new TypeToken<List<Usuario>>(){}.getType();
-
-                        //EntornoDeDatos.ListaUsuario.clear();
-                        //EntornoDeDatos.ListaUsuario = Conversor.fromJson(response, listType);
                        ConvertirJSONALista(response);
                     }
                 }, new Response.ErrorListener()
