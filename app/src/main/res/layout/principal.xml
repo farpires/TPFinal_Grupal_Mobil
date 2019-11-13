@@ -17,5 +17,12 @@
        android:id="@+id/BotonIraCategoria"
        ></Button>
 
+   <Button
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:text="Usuario"
+       android:id="@+id/BotonIraUsuario"
+       ></Button>
+
 
 </LinearLayout>

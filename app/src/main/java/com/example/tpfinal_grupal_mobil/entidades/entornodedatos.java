@@ -10,6 +10,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.tpfinal_grupal_mobil.entidades.categoria.Categoria;
 import com.example.tpfinal_grupal_mobil.entidades.distribuidora.distribuidora;
+import com.example.tpfinal_grupal_mobil.entidades.usuario.Usuario;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -19,12 +20,13 @@ import java.util.List;
 
 public class entornodedatos
 {
-    public static final String LinkServidorWeb = "http://192.168.1.150:8080/ProyectoFinal_Grupal/";
+    public static final String LinkServidorWeb = "http://192.168.1.170:8080/ProyectoFinal_Grupal/";
 
     public static boolean DatosInicializados = false;
 
     public static List<distribuidora> ListaDistribuidora = new ArrayList<distribuidora>();
     public static List<Categoria> ListaCategoria = new ArrayList<Categoria>();
+    public static List<Usuario> ListaUsuario = new ArrayList<Usuario>();
 
 
     public static String AgregarParametroALink(String LinkServidorWebParametro, String NombreParametro, String ValorParametro)
@@ -102,7 +104,59 @@ public class entornodedatos
         entornodedatos.ListaDistribuidora = Conversor.fromJson(DatosEnFormatoJSON, listType);
     }
 
+   /* public static void BuscarUsuario(Context context, String UsuarioNombre)
+    {
 
+        RequestQueue queue = Volley.newRequestQueue(context.getApplicationContext());
+
+        String RutaAlServicioWEB = LinkServidorWeb + "/usuariowsp";
+
+        RutaAlServicioWEB = AgregarParametroALink(RutaAlServicioWEB,"?TipoProceso","4");
+        RutaAlServicioWEB = AgregarParametroALink(RutaAlServicioWEB,"&ProductoNombreABuscar",UsuarioNombre);
+
+
+        // La Dirección a donde vamos a realizar el Request
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, RutaAlServicioWEB,
+                new Response.Listener<String>()
+                {
+                    @Override
+                    public void onResponse(String response)
+                    {
+                        ConvertirJSONALista(response);
+                     //   UsuarioCargado = true;
+                    }
+                }, new Response.ErrorListener()
+        {
+            @Override
+            public void onErrorResponse(VolleyError error)
+            {
+
+              //  UsuarioCargado = false;
+
+                //Toast.makeText(context,error.getLocalizedMessage(),Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        // Agregamos el StringRequest a la Cola de solicitudes //
+        queue.add(stringRequest);
+
+       // return UsuarioCargado;
+    }
+
+
+    public static void ConvertirJSONALista(String DatosEnFormatoJSON)
+    {
+        Gson Conversor = new Gson();
+
+        Type listType = new TypeToken<List<Usuario>>(){}.getType();
+        entornodedatos.ListaUsuario.clear();
+        entornodedatos.ListaUsuario = Conversor.fromJson(DatosEnFormatoJSON, listType);
+
+
+
+        // MyUsuarioAdapter.notifyDataSetChanged();
+
+    }*/
 
 
 

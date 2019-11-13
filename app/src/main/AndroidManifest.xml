@@ -14,6 +14,8 @@
         <activity android:name=".entidades.distribuidora.distribuidoraABM"></activity>
         <activity android:name=".entidades.categoria.PantallaPrincipalCategoria"></activity>
         <activity android:name=".entidades.categoria.CategoriaABM"></activity>
+        <activity android:name=".entidades.usuario.usuarioabm"></activity>
+        <activity android:name=".entidades.usuario.UsuarioBuscar"></activity>
         <activity android:name=".principal">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -57,7 +57,7 @@ public class PantallaPrincipalDistribuidora extends AppCompatActivity implements
         MyAdapter = new distribuidoraADAPTER(getApplicationContext());
         Listado_List_view.setAdapter(MyAdapter);
         Listado_List_view.setOnItemClickListener(this);
-        entornodedatos.Inicializar();
+        //entornodedatos.Inicializar();
     }
 
     private boolean Validar()

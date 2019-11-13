@@ -57,7 +57,7 @@ public class PantallaPrincipalCategoria extends AppCompatActivity implements Vie
         MyAdapter = new CategoriaAdapter(getApplicationContext());
         Listado_List_view.setAdapter(MyAdapter);
         Listado_List_view.setOnItemClickListener(this);
-        entornodedatos.Inicializar();
+        //entornodedatos.Inicializar();
     }
 
     private boolean Validar()

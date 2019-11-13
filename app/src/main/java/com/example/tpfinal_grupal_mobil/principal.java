@@ -10,11 +10,13 @@ import android.widget.Button;
 import com.example.tpfinal_grupal_mobil.entidades.categoria.PantallaPrincipalCategoria;
 import com.example.tpfinal_grupal_mobil.entidades.distribuidora.PantallaPrincipalDistribuidora;
 import com.example.tpfinal_grupal_mobil.entidades.entornodedatos;
+import com.example.tpfinal_grupal_mobil.entidades.usuario.UsuarioBuscar;
 
 public class principal extends AppCompatActivity implements View.OnClickListener{
 
     Button BotonIrADistribuidora;
     Button BotonIrACategoria;
+    Button BotonIraUsuario;
 
 
     @Override
@@ -27,8 +29,17 @@ public class principal extends AppCompatActivity implements View.OnClickListener
 
         BotonIrACategoria = findViewById(R.id.BotonIraCategoria);
         BotonIrACategoria.setOnClickListener(this);
-
+        BotonIraUsuario=findViewById(R.id.BotonIraUsuario);
         entornodedatos.BuscarDistribuidora(getApplicationContext()," ");
+        BotonIraUsuario.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent iradistribuidora = new Intent(getApplicationContext(), UsuarioBuscar.class);
+                startActivity(iradistribuidora);
+            }
+        });
+
+
     }
 
     @Override
